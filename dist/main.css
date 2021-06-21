@@ -72,8 +72,8 @@ body {
   position: absolute;
   bottom: 4vh;
   left: 3.5vw;
-  -webkit-transition-property: all;
-  transition-property: all;
+  -webkit-transition-property: left;
+  transition-property: left;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
   -webkit-transition-timing-function: linear;

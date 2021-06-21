@@ -3,6 +3,12 @@ cross = true;
 // variables declared without let or var keyword become global and can be accessed anywhere
 
 function startGame() {
+  gameAudio = new Audio('../assets/music.mp3');
+  gameOverAudio = new Audio('../assets/death.mp3');
+  setTimeout(() => {
+    gameAudio.play();
+  }, 1200);
+
   // onkeydown is triggered when a key is pressed
   // e.keycode will give the key code of the key pressed
   document.onkeydown = function (e) {
@@ -24,6 +30,7 @@ function startGame() {
       dinoX = parseInt(
         window.getComputedStyle(dino, null).getPropertyValue("left")
       );
+      dino.style.transform = "scaleX(1)";
       dino.style.left = dinoX + 112 + "px";
     } else if (e.keyCode == 65 || e.keyCode == 37) {
       // LEFT
@@ -32,6 +39,7 @@ function startGame() {
       dinoX = parseInt(
         window.getComputedStyle(dino, null).getPropertyValue("left")
       );
+      dino.style.transform = "scaleX(-1)";
       dino.style.left = dinoX - 112 + "px";
     }
   };
@@ -57,6 +65,13 @@ function startGame() {
     if (offsetX < 120 && offsetY < 30) {
       obstacle.classList.remove("obstacleAnimation");
       gameOver.style.visibility = "visible";
+
+      gameAudio.pause();
+      // death audio
+      gameOverAudio.play();
+      setTimeout(() => {
+        gameOverAudio.pause();
+      }, 1500);
     } else if (offsetX > 180 && offsetX < 250 && cross) {
       score += 1;
       updateScore(score);
@@ -76,7 +91,7 @@ function startGame() {
           console.log(newDuration);
           obstacle.style.animationDuration = newDuration + "s";
         } else if (newDuration <= 1.2) {
-          console.log("topspeed reached");
+          console.log("top speed reached");
         }
       }, 345);
     }

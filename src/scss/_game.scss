@@ -17,7 +17,7 @@
     // position absolute helps us place our element relative to the **first non-static positioned parent** of the element
     bottom:4vh;
     left: 3.5vw;
-    transition-property: all;
+    transition-property: left;
     transition-duration: .3s;
     transition-timing-function: linear;
   }
