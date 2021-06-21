@@ -1,0 +1,47 @@
+.game{
+  background: url(../assets/bg.jpg) no-repeat;
+  background-size: 100vw 100vh;
+  width:100vw;
+  height: 100vh;
+  &-over{
+    visibility: hidden;
+    font-size: 5rem;
+    color: #fff;
+  }
+  &-dino{
+    background: url(../assets/dino.png) no-repeat;
+    background-size: cover;
+    width: 17vw;
+    height: 18vh;
+    position: absolute;
+    // position absolute helps us place our element relative to the **first non-static positioned parent** of the element
+    bottom:4vh;
+    left: 3.5vw;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+  }
+  &-obstacle{
+    width: 7vw;
+    height: 14vh;
+    background: url(../assets/meteor.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 8vh;
+    right: 3vw;
+    transform: rotate(123deg);
+  }
+}
+
+.animateDino{
+  animation-name: dinoJump;
+  animation-duration: 0.75s;
+  animation-timing-function: linear;
+}
+
+.obstacleAnimation{
+  animation-name: obstacleAnimation;
+  animation-duration: 03s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

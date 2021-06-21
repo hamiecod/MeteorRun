@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes dinoJump {
+  0% {
+    bottom: 4vh;
+  }
+  50% {
+    bottom: 34vh;
+  }
+  100% {
+    bottom: 4vh;
+  }
+}
+
+@keyframes dinoJump {
+  0% {
+    bottom: 4vh;
+  }
+  50% {
+    bottom: 34vh;
+  }
+  100% {
+    bottom: 4vh;
+  }
+}
+
+@-webkit-keyframes obstacleAnimation {
+  0% {
+    right: 0vw;
+  }
+  100% {
+    right: 180vw;
+  }
+}
+
+@keyframes obstacleAnimation {
+  0% {
+    right: 0vw;
+  }
+  100% {
+    right: 180vw;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+.game {
+  background: url(../assets/bg.jpg) no-repeat;
+  background-size: 100vw 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-over {
+  visibility: hidden;
+  font-size: 5rem;
+  color: #fff;
+}
+
+.game-dino {
+  background: url(../assets/dino.png) no-repeat;
+  background-size: cover;
+  width: 17vw;
+  height: 18vh;
+  position: absolute;
+  bottom: 4vh;
+  left: 3.5vw;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.game-obstacle {
+  width: 7vw;
+  height: 14vh;
+  background: url(../assets/meteor.png);
+  background-size: cover;
+  position: absolute;
+  bottom: 8vh;
+  right: 3vw;
+  -webkit-transform: rotate(123deg);
+          transform: rotate(123deg);
+}
+
+.animateDino {
+  -webkit-animation-name: dinoJump;
+          animation-name: dinoJump;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.obstacleAnimation {
+  -webkit-animation-name: obstacleAnimation;
+          animation-name: obstacleAnimation;
+  -webkit-animation-duration: 03s;
+          animation-duration: 03s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
