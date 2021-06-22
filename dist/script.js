@@ -1,10 +1,13 @@
 score = 0;
 cross = true;
+var playButton = document.querySelector('.splash-play__button');
 // variables declared without let or var keyword become global and can be accessed anywhere
 
 function startGame() {
   gameAudio = new Audio('../assets/music.mp3');
   gameOverAudio = new Audio('../assets/death.mp3');
+  obstacle.style.visibility = "visible";
+  obstacle.style.right = -3 + "vw";
   setTimeout(() => {
     gameAudio.play();
   }, 1200);
@@ -104,4 +107,14 @@ function updateScore(score) {
   scoreContainer.innerHTML = "Your Score: " + score;
 }
 
-document.addEventListener('DOMContentLoaded', startGame);
+function hideSplash(){
+  let splash = document.querySelector('.splash');
+  splash.style.visibility = "hidden";
+  setTimeout(() => {
+    startGame();
+  }, 777);
+}
+
+playButton.addEventListener('click', hideSplash);
+let obstacle = document.querySelector('.game-obstacle');
+obstacle.style.visibility = "hidden";
