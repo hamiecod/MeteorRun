@@ -9,6 +9,7 @@ gameOver.classList.add("hidden");
 gameOver.classList.remove("visible");
 
 function startGame() {
+  animationDuration = 3+"s";
   score=0;
   updateScore(score);
 
