@@ -6,8 +6,11 @@ var playButton = document.querySelector('.splash-play__button');
 function startGame() {
   gameAudio = new Audio('../assets/music.mp3');
   gameOverAudio = new Audio('../assets/death.mp3');
-  obstacle.style.visibility = "visible";
+  obstacle.classList.remove("hidden");
+  obstacle.classList.add("visible");
   obstacle.style.right = -3 + "vw";
+  gameOver = document.querySelector(".game-over");
+  gameOver.classList.add("hidden");
   setTimeout(() => {
     gameAudio.play();
   }, 1200);
@@ -67,7 +70,8 @@ function startGame() {
 
     if (offsetX < 120 && offsetY < 30) {
       obstacle.classList.remove("obstacleAnimation");
-      gameOver.style.visibility = "visible";
+      gameOver.classList.remove("hidden");
+      gameOver.classList.add("visible");
 
       gameAudio.pause();
       // death audio
@@ -109,12 +113,15 @@ function updateScore(score) {
 
 function hideSplash(){
   let splash = document.querySelector('.splash');
-  splash.style.visibility = "hidden";
+  splash.classList.remove("visible");
+  splash.classList.add("hidden");
   setTimeout(() => {
     startGame();
-  }, 777);
+  }, 1500);
 }
 
 playButton.addEventListener('click', hideSplash);
 let obstacle = document.querySelector('.game-obstacle');
-obstacle.style.visibility = "hidden";
+let splash = document.querySelector('.splash');
+splash.classList.add("visible");
+obstacle.classList.add("hidden");
