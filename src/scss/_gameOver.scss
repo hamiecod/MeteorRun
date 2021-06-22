@@ -1,0 +1,47 @@
+.game-over{
+    position: absolute;
+    top: 0vh;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.9;
+    &__title{
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 6rem;
+        position: absolute;
+        top: 25vh;
+    }
+    &__score{
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        top: 44vh
+    }
+    &__retry{
+        position: absolute;
+        top: 55vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-button{
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            width: 20vw;
+            text-align: center;
+            font-size: 3rem;
+            padding: 1vh;
+            border-radius: 2vh;
+            color: #fff;
+            cursor: pointer;
+            transition-property: transform;
+            transition-duration: .8s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

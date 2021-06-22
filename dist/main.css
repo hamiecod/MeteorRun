@@ -217,3 +217,68 @@ body {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
+
+.game-over {
+  position: absolute;
+  top: 0vh;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.9;
+}
+
+.game-over__title {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 6rem;
+  position: absolute;
+  top: 25vh;
+}
+
+.game-over__score {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 44vh;
+}
+
+.game-over__retry {
+  position: absolute;
+  top: 55vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-over__retry-button {
+  background: -webkit-gradient(linear, left top, right top, from(#8e2de2), to(#4a00e0));
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  width: 20vw;
+  text-align: center;
+  font-size: 3rem;
+  padding: 1vh;
+  border-radius: 2vh;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: .8s;
+          transition-duration: .8s;
+}
+
+.game-over__retry-button:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
